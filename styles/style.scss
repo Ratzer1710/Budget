@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+// font boldness
+$bold: 600;
+$light: 500;
+
+// font size
+$title: 2vw;
+$subtitle: 1.3vw;
+$text: 0.9vw;
+
+// Colors
+$bg: #4285f4;
+$blue: #0045b4;
+$green: #00ca4e;
+$green2: #028032;
+$red: #ff0800;
+$red2: #8a0d09;
+$grey: #f0f0f0;
+$darkGrey: #606060;
+$black: #202020;
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+body {
+    background-color: #f7f9df; 
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {display: none;}
+}
+
+.wrapper {
+    width: 90%;
+    font-size: $subtitle;
+    margin: 1% 5% 2.5%;
+}
+
+.balance-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 1%;
+    padding: 1.25%;
+    border-radius: 0.3em;
+    box-shadow: 0 0.6em 1.2em rgba(28, 0, 80, 0.06);
+    background-color: $bg;
+    color: #fff;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h2 {
+        font-size: $title;
+        font-weight: $light;
+    }
+
+    span {
+        text-align: center;
+        font-weight: $bold;
+        font-size: $title;
+    }
+}
+
+.transactions-container {
+    background: #fff;
+    padding: 0 1.5% 1%;
+    box-shadow: 0 0.6em 1.2em rgba(28, 0, 80, 0.06);
+    border-radius: 0.3em;
+    margin-bottom: 10%;
+}
+
+.list-container {
+    overflow: scroll;
+    height: 55vh;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.sublist-content {
+    border-left: 0.75em solid;
+    margin: 0 0 1% 0.8%;
+    padding: 0.8% 0.4%;
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr 1fr;
+    background: #f0f0f0;
+
+    p {
+        text-align: center;
+        color: $darkGrey;
+        font-weight: $light;
+        font-size: $text;
+    }
+}
+
+.sublist-content-header{
+    border-color: #fff;
+    background: #fff;
+    font-weight: $bold;
+    margin: 1% 0;
+
+    p {
+        color: $black;
+        font-weight: $bold;
+        font-size: $subtitle;
+    }
+}
+
+.income {
+    border-color: $green;
+
+    .value {
+        color: $green;
+    }
+}
+
+.expense {
+    border-color: $red;
+
+    .value {
+        color: $red;
+    }
+}
+
+.budget {
+    font-weight: $bold !important;
+    color: $black !important;
+}
+
+.add-form-btn {
+    position: fixed;
+    bottom: 5%;
+    left: 15%;
+    font-weight: $light;
+    font-size: $text;
+    padding: 0.65%;
+    border-radius: 0.4em;
+    background-color: $bg;
+    color: #fff;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $blue;
+    }
+}
+
+.back-up-btn {
+    position: fixed;
+    bottom: 5%;
+    left: 5%;
+    font-weight: $light;
+    font-size: $text;
+    padding: 0.65% 2%;
+    border-radius: 0.4em;
+    background-color: $green;
+    color: #fff;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $green2;
+    }
+}
+
+#add-form-wrapper {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #f7f9df;
+    z-index: 3;
+}
+
+.add-form-wrapper-show {
+    display: block !important;
+}
+
+.add-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    height: 80%;
+    margin: 15%;
+    margin-top: 2.5%;
+    border-radius: 0.3em;
+    box-shadow: 0 0.6em 1.2em rgba(28, 0, 80, 0.06);
+    background: #fff;
+
+    h2 {
+        font-size: $title;
+        font-weight: $bold;
+        margin-top: 5%;
+    }
+
+    input {
+        background: none;
+        width: 40%;
+        font-size: $subtitle;
+        padding-bottom: 0.1vw;
+        border: none;
+        border-bottom: 0.15vw solid $darkGrey;
+        text-align: center;
+
+        &:focus {
+            outline: none;
+            border-color: $black;
+        }
+    }
+
+    div {
+        display: flex;
+        justify-content: space-between;
+        width: 30%;
+        margin-bottom: 5%;
+    }
+
+    button {
+        font-size: $text;
+        border: none;
+        outline: none;
+        color: #fff;
+        padding: 2% 6%;
+        border-radius: 0.3em;
+        cursor: pointer;
+    }
+}
+
+.expense-submit {background-color: $red; &:hover {background-color: $red2;}}
+.income-submit {background-color: $green2; &:hover {background-color: $green;}}
+
+footer {
+    text-align: center;
+    font-size: $text;
+    background: $bg;
+    color: #fff;
+    font-weight: $bold;
+}
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { 
+    appearance:textfield;
+    -webkit-appearance: none; 
+}
+
+@media print {
+    body {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+}

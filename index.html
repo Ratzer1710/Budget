@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+    <title></title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="balance-container">
+            <div>
+                <h2>Income</h2>
+                <span id="income-total">0</span>
+            </div>
+            <div>
+                <h2>Balance</h2>
+                <span id="budget-total">0</span>
+            </div>
+            <div>
+                <h2>Expenses</h2>
+                <span id="expenses-total"></span>
+            </div>
+        </div>
+
+        <div class="transactions-container">
+            <div class="sublist-content sublist-content-header">
+                <p>Date</p>
+                <p>Description</p>
+                <p>Value</p>
+                <p class="budget">Balance</p>
+            </div>
+            <div class="list-container" id="list">
+            </div>
+        </div>
+    </div>
+
+    <span class="add-form-btn " id="add-form-btn">New Transaction</span>
+    <span class="back-up-btn " id="back-up-btn">Back up</span>
+
+    <div id="add-form-wrapper">
+        <div class="add-form-container" id="add-form-container">
+            <h2>New Transaction</h2>
+            <input type="date" class="date-input" id="date">
+            <input type="text" class="movement-input" id="movement" placeholder="Description">
+            <input type="number" step="0.01" class="value-input" id="value" placeholder="Value">
+            <div>
+                <button class="submit-transaction income-submit" id="income-submit" onclick="newIncome()">Add income</button>
+                <button class="submit-transaction expense-submit" id="expense-submit" onclick="newExpense()">Add expense</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <span>Website created by Sebastián Ratzer © 2022</span>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
